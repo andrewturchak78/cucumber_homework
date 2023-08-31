@@ -91,8 +91,8 @@ public class TestSteps {
     }
 
     @Тогда("элемент овощ {string} присутствует")
-    public void элемент_овощ_присутствует() {
-        potato.getText();
+    public void элемент_овощ_присутствует(String potatoName) {
+        Assertions.assertEquals(potatoName, potato.getText());
 
     }
 
@@ -106,18 +106,21 @@ public class TestSteps {
         Assertions.assertEquals(idNumber, id.getText());
     }
 
+    @И("проверим добавился ли овощ по типу {string}")
     public void findVegetableByType(String type) {
         Assertions.assertEquals(type, vegetableType.getText());
     }
-
+    @И("проверим добавился ли фрукт по типу {string}")
     public void findFruitByType(String type) {
         Assertions.assertEquals(type, fruitType.getText());
     }
 
+    @И("проверим добавился экзотичный овощ или нет {string}")
     public void vegetableExoticFalse(String falseOrTrue) {
         Assertions.assertEquals(falseOrTrue, vegetableNotExotic.getText());
     }
 
+    @И("проверим добавился экзотичный фрукт или нет {string}")
     public void fruitExoticTrue(String falseOrTrue) {
         Assertions.assertEquals(falseOrTrue, fruitExotic.getText());
     }
