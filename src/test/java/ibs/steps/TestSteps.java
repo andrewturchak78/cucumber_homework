@@ -1,25 +1,10 @@
 package ibs.steps;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.И;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
 
-import org.h2.jdbcx.JdbcDataSource;
-import org.junit.jupiter.api.Assertions;
-import page.TestPage;
-
-
-import javax.sql.DataSource;
-import java.sql.*;
-import java.time.Duration;
-
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 
 
 public class TestSteps {
@@ -29,11 +14,7 @@ public class TestSteps {
 
     @Дано("открыта страница по адресу {string}")
     public void открыта_страница_по_адресу(String url) {
-
         page.openPage(url);
-
-
-
     }
 
     @Тогда("произошел клик по кнопке добавить")
@@ -79,7 +60,7 @@ public class TestSteps {
     @Когда("кликаем по кнопке cохранить")
     public TestSteps кликаем_по_кнопке_cохранить() {
         page.clickOnSaveBtn();
-        return page();
+        return this;
     }
 
     @Тогда("добавился товар {string} с типом {string} экзотичный или нет {string}")
@@ -91,7 +72,7 @@ public class TestSteps {
         page.findFruitByType(type);
         page.vegetableExoticFalse(falseOrTrue);
         page.fruitExoticTrue(falseOrTrue);
-        return page();
+        return this;
     }
 
 

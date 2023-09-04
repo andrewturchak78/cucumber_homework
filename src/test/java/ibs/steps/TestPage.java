@@ -1,4 +1,5 @@
-package page;
+package ibs.steps;
+
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -7,27 +8,26 @@ import org.junit.jupiter.api.Assertions;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestPage {
-    private SelenideElement addBtn = $x("//button[text()='Добавить']");
-    private SelenideElement itemInput = $("#name");
-    private SelenideElement typeField = $("#type");
-    private SelenideElement chooseVegetable = $("[value='VEGETABLE']");
-    private SelenideElement chooseFruit = $("[value='FRUIT']");
-    private SelenideElement exoticCheckbox = $("#exotic");
-    private SelenideElement saveBtn = $("#save");
-    private SelenideElement potato = $x("//td[.='Картофель']");
-    private SelenideElement pineapple = $x("//td[.='Ананас']");
-    private SelenideElement id = $x("//th[.='5']");
-    private SelenideElement vegetableType = $$x("//tr/td[.= 'Овощ']").get(2);
-    private SelenideElement fruitType = $$x("//tr/td[.= 'Фрукт']").get(2);
-    private SelenideElement vegetableNotExotic = $$x("//tr/td[.= 'false']").get(2);
-    private SelenideElement fruitExotic = $$x("//tr/td[.= 'true']").get(1);
+    private final SelenideElement addBtn = $x("//button[text()='Добавить']");
+    private final SelenideElement itemInput = $("#name");
+    private final SelenideElement typeField = $("#type");
+    private final SelenideElement chooseVegetable = $("[value='VEGETABLE']");
+    private final SelenideElement chooseFruit = $("[value='FRUIT']");
+    private final SelenideElement exoticCheckbox = $("#exotic");
+    private final SelenideElement saveBtn = $("#save");
+    private final SelenideElement potato = $x("//td[.='Картофель']");
+    private final SelenideElement pineapple = $x("//td[.='Ананас']");
+    private final SelenideElement id = $x("//th[.='5']");
+    private final SelenideElement vegetableType = $$x("//tr/td[.= 'Овощ']").get(2);
+    private final SelenideElement fruitType = $$x("//tr/td[.= 'Фрукт']").get(2);
+    private final SelenideElement vegetableNotExotic = $$x("//tr/td[.= 'false']").get(2);
+    private final SelenideElement fruitExotic = $$x("//tr/td[.= 'true']").get(1);
 
 
 
-    public TestPage openPage(String url) {
+    public void openPage(String url) {
 
         open(url);
-        return page();
 
 
     }
